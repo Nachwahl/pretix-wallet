@@ -11,6 +11,8 @@ class WalletTicketOutput(BaseTicketOutput):
     download_button_icon = 'fa-brands fa-google'
     long_download_button_text = _('Save to Google Wallet')
     multi_download_enabled = False
+    preview_allowed = False
+    javascript_required = True
 
 
     def __init__(self, event):

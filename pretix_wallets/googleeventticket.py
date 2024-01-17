@@ -1,17 +1,12 @@
 import json
-import os
-import uuid
+
 import pytz
-
-
+from google.auth import jwt, crypt
 from google.auth.transport.requests import AuthorizedSession
 from google.oauth2.service_account import Credentials
-from google.auth import jwt, crypt
 
 from pretix.base.models import OrderPosition
 from pretix.multidomain.urlreverse import build_absolute_uri
-from django.utils.formats import date_format
-
 
 
 class GoogleEventTickets:

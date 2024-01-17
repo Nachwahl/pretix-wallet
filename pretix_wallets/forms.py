@@ -11,9 +11,6 @@ from pretix.control.forms import ClearableBasenameFileInput
 logger = logging.getLogger(__name__)
 
 
-
-
-
 class PNGImageField(forms.FileField):
     widget = ClearableBasenameFileInput
 
@@ -29,7 +26,7 @@ class PNGImageField(forms.FileField):
             value.seek(0)
             try:
                 with Image.open(
-                    value, formats=settings.PILLOW_FORMATS_IMAGE
+                        value, formats=settings.PILLOW_FORMATS_IMAGE
                 ) as im, tempfile.NamedTemporaryFile("rb", suffix=".png") as tmpfile:
                     im.save(tmpfile.name)
                     tmpfile.seek(0)
